@@ -1,0 +1,41 @@
+//apply plugin: 'com.android.application'
+ext.mainApp = true
+apply from: rootProject.file('cc-settings-2.gradle')
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.laolian.wanandroid"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    api project(":common")
+    addComponent "home"
+//    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    implementation project(":base")
+//    implementation project(":network")
+//    implementation 'com.yanzhenjie:permission:2.0.3'
+}

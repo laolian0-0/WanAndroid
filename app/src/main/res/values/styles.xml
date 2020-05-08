@@ -1,0 +1,18 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorTextTitle</item>
+        <item name="android:textColorSecondary">@color/colorTextContent</item>
+        <item name="android:divider">@drawable/ic_list_divider</item>
+        <item name="android:dividerHeight">@dimen/division_line</item>
+        <item name="android:listDivider">@drawable/ic_list_divider</item>
+    </style>
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@drawable/theme_background</item>
+    </style>
+
+</resources>

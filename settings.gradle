@@ -1,0 +1,2 @@
+include ':app', ':base', ':home', ':network', ':common'
+rootProject.name='WanAndroid'

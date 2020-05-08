@@ -1,0 +1,39 @@
+apply from:rootProject.file('cc-settings-2.gradle')
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        if (project.ext.runAsApp) {
+            applicationId 'com.laolian.home'
+        }
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding{
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api project(":common")
+//    implementation project(":network")
+//    implementation "com.google.android.material:material:$rootProject.androidXVersion.material"
+//    implementation 'com.youth.banner:banner:2.0.0-alpha02'  //预览版
+}

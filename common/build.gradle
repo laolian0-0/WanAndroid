@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api "com.google.android.material:material:$rootProject.androidXVersion.material"
+
+    api project(":base")
+    api project(":network")
+    //banner
+    api 'com.youth.banner:banner:2.0.0-alpha02'
+    //网络图片加载框架
+    api 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //下拉刷新 上来加载
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'
+    //AgentWeb  Android WebView
+    implementation 'com.just.agentweb:agentweb:4.1.3'
+}
